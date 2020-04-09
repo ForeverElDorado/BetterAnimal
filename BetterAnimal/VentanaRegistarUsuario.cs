@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BetterAnimal
 {
-    public partial class VentanaInicial : Form
+    public partial class VentanaRegistarUsuario : Form
     {
-        public VentanaInicial()
+        public VentanaRegistarUsuario()
         {
             InitializeComponent();
         }
