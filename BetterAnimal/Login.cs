@@ -12,6 +12,8 @@ namespace BetterAnimal
 {
     public partial class Login : Form
     {
+        Conexion conexion = new Conexion();
+
         public Login()
         {
             InitializeComponent();
@@ -20,6 +22,14 @@ namespace BetterAnimal
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String resultado = conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text);
+            MessageBox.Show(resultado);
+            //VentanaInicio v = new VentanaInicio();
+            //v.Show();
         }
     }
 }
