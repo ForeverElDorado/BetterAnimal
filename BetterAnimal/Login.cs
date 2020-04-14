@@ -26,8 +26,19 @@ namespace BetterAnimal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String resultado = conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text);
-            MessageBox.Show(resultado);
+            if(conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text))
+            {
+                this.Hide();
+                VentanaInicio v = new VentanaInicio();
+                v.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña erroneos");
+            }
+
+            //  String resultado = conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text);
+            // MessageBox.Show(resultado);
             //VentanaInicio v = new VentanaInicio();
             //v.Show();
         }

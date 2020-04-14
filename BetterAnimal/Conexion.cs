@@ -16,7 +16,8 @@ namespace BetterAnimal
             conexion = new MySqlConnection("Server = 127.0.0.1; Database = veterinario; Uid = root; Pwd =; Port = 3306");
         }
 
-        public String loginVeterinario(String usuario, String contraseña)
+        // public String loginVeterinario(String usuario, String contraseña)
+        public Boolean loginVeterinario(String usuario, String contraseña)
         {
             try
             {
@@ -32,10 +33,37 @@ namespace BetterAnimal
 
                 if (resultado.Read())
                 {
-                    return resultado.GetString(1);
+                    // return resultado.GetString(1);
+                    return true;
                 }
                 conexion.Close();
-                return "error de usuario/contraseña";
+                //return "error de usuario/contraseña";
+                return false;
+            }
+            catch (MySqlException e)
+            {
+                // return "error";
+                return false;
+            }
+        }
+        /*CODIGO PARA INSERTAR USUARIOS EN LA BASE DE DATOS, HAY QUE AÑADIR STRING POR CAMPO (NOMBRE APELLIDOS TELEFONO EMAIL...)
+         * 
+         */
+        public String insertaUsuario(String DNI, String Nombre, String pass)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO usuario (id, DNI, Nombre, pass) VALUES (NULL, @DNI, @Nombre, @pass)", conexion);
+                    consulta.Parameters.AddWithValue("@DNI", DNI);
+                    consulta.Parameters.AddWithValue("@Nombre", Nombre);
+                    consulta.Parameters.AddWithValue("@pass", pass);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "ok";
             }
             catch (MySqlException e)
             {
