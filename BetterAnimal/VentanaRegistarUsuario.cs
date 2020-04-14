@@ -31,6 +31,7 @@ namespace BetterAnimal
            MessageBox.Show(conexion.insertaUsuario(textBoxDNI.Text, textBoxNombre.Text, myHash));
             //En herramientas nugget añadir el siguiente comando para la encriptacion de contraseñas
             // Install-Package BCrypt-Official
+            //Si registrais a alguien porfavor apuntar la contraseña ya que con el Hash esta se queda encriptada.
         }
     }
 }

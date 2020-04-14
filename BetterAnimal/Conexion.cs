@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient.Authentication;
 
 namespace BetterAnimal
 {
@@ -24,17 +25,24 @@ namespace BetterAnimal
                 conexion.Open();
                 MySqlCommand consulta = 
                    
-                new MySqlCommand("SELECT * FROM trabajador where usuario = @usuario AND contraseña = @contraseña", conexion);
+                new MySqlCommand("SELECT * FROM trabajador where usuario = @usuario", conexion);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
-                consulta.Parameters.AddWithValue("@contraseña", contraseña);
+               // consulta.Parameters.AddWithValue("@contraseña", contraseña);
 
 
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
                 if (resultado.Read())
                 {
+                    //AQUI SE CHEQUEA LA CONTRASEÑA DE HASH
+                    //nombre de la columna ¿1?
+                    string passwordConHash = resultado.GetString("contraseña");
+                    if(BCrypt.Net.BCrypt.Verify(contraseña, passwordConHash))
+                    {
+                        return true;
+                    }
+                    return false;
                     // return resultado.GetString(1);
-                    return true;
                 }
                 conexion.Close();
                 //return "error de usuario/contraseña";
@@ -49,16 +57,16 @@ namespace BetterAnimal
         /*CODIGO PARA INSERTAR USUARIOS EN LA BASE DE DATOS, HAY QUE AÑADIR STRING POR CAMPO (NOMBRE APELLIDOS TELEFONO EMAIL...)
          * 
          */
-        public String insertaUsuario(String DNI, String Nombre, String pass)
+        public String insertaUsuario(String DNI, String Nombre, String contraseña)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO usuario (id, DNI, Nombre, pass) VALUES (NULL, @DNI, @Nombre, @pass)", conexion);
+                    new MySqlCommand("INSERT INTO usuario (id, DNI, Nombre, contraseña) VALUES (NULL, @DNI, @Nombre, @contraseña)", conexion);
                     consulta.Parameters.AddWithValue("@DNI", DNI);
                     consulta.Parameters.AddWithValue("@Nombre", Nombre);
-                    consulta.Parameters.AddWithValue("@pass", pass);
+                    consulta.Parameters.AddWithValue("@contraseña", contraseña);
 
                 consulta.ExecuteNonQuery();
 
