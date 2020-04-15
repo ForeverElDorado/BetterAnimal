@@ -160,6 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(894, 536);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox5);
@@ -174,6 +175,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "VentanaRegistarMascota";
             this.Text = "Registrar Nueva Mascota";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
