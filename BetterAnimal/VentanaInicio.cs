@@ -16,5 +16,21 @@ namespace BetterAnimal
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             VentanaLogin ventana = new VentanaLogin();
+            ventana.Show();
+            this.Hide();
+           //ventana inicio se oculta pero no se cierra la APP
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            VentanaRegistarUsuario ventana = new VentanaRegistarUsuario();
+            ventana.Show();
+            this.Hide();
+            //ventana inicio se oculta pero no se cierra la 
+    }
     }
 }

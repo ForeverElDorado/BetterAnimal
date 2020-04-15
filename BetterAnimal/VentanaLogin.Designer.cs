@@ -1,6 +1,6 @@
 ﻿namespace BetterAnimal
 {
-    partial class Login
+    partial class VentanaLogin
     {
         /// <summary>
         /// Required designer variable.

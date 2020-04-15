@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace BetterAnimal
 {
-    public partial class Login : Form
+    public partial class VentanaLogin : Form
     {
         Conexion conexion = new Conexion();
 
-        public Login()
+        public VentanaLogin()
         {
             InitializeComponent();
         }
