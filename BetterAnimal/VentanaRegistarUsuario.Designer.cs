@@ -52,7 +52,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre:";
+            this.label1.Text = "Usuario:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -162,7 +162,7 @@
             // 
             // textBoxContraseña
             // 
-            this.textBoxContraseña.Location = new System.Drawing.Point(139, 285);
+            this.textBoxContraseña.Location = new System.Drawing.Point(387, 92);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.Size = new System.Drawing.Size(206, 20);
             this.textBoxContraseña.TabIndex = 15;
@@ -170,7 +170,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 282);
+            this.label8.Location = new System.Drawing.Point(260, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 23);
             this.label8.TabIndex = 14;

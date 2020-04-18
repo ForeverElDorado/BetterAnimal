@@ -57,15 +57,14 @@ namespace BetterAnimal
         /*CODIGO PARA INSERTAR USUARIOS EN LA BASE DE DATOS, HAY QUE AÑADIR STRING POR CAMPO (NOMBRE APELLIDOS TELEFONO EMAIL...)
          * 
          */
-        public String insertaUsuario(String DNI, String Nombre, String contraseña)
+        public String insertaUsuario(String DNI, String usuario, String contraseña)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO usuario (id, DNI, Nombre, contraseña) VALUES (NULL, @DNI, @Nombre, @contraseña)", conexion);
-                    consulta.Parameters.AddWithValue("@DNI", DNI);
-                    consulta.Parameters.AddWithValue("@Nombre", Nombre);
+                    new MySqlCommand("INSERT INTO prueba (usuario, contraseña) VALUES (@Usuario, @contraseña)", conexion);
+                    consulta.Parameters.AddWithValue("@usuario", usuario);
                     consulta.Parameters.AddWithValue("@contraseña", contraseña);
 
                 consulta.ExecuteNonQuery();
