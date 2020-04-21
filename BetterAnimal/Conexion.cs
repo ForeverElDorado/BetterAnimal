@@ -25,11 +25,8 @@ namespace BetterAnimal
                 conexion.Open();
                 MySqlCommand consulta = 
                    
-                new MySqlCommand("SELECT * FROM trabajador where usuario = @usuario", conexion);
+                new MySqlCommand("SELECT * FROM prueba where usuario = @usuario ",conexion);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
-               // consulta.Parameters.AddWithValue("@contraseña", contraseña);
-
-
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
                 if (resultado.Read())

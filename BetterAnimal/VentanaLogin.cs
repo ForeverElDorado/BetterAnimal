@@ -19,14 +19,14 @@ namespace BetterAnimal
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        
+        private void botonHacerLogin(object sender, EventArgs e)
         {
+            //this.Hide();
+            //VentanaInicio v = new VentanaInicio();
+            //v.Show();
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text))
+            if (conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text))
             {
                 this.Hide();
                 VentanaInicio v = new VentanaInicio();
