@@ -28,7 +28,10 @@ namespace BetterAnimal
             String textoContraseña = textBoxContraseña.Text;
             string myHash = BCrypt.Net.BCrypt.HashPassword(textoContraseña, BCrypt.Net.BCrypt.GenerateSalt());
 
-           MessageBox.Show(conexion.insertaUsuario(textBoxDNI.Text, textBoxNombre.Text, myHash));
+            //Para las pruebas de insertar usar este:
+            //MessageBox.Show(conexion.insertaUsuario(textBoxDNI.Text, textBoxNombre.Text, myHash));
+
+            MessageBox.Show(conexion.insertaUsuario(textBoxDNI.Text, textBoxNombre.Text, textBoxApellidos.Text, textBoxTlf.Text, textBoxChip.Text, textBoxEmail.Text, textBoxUsuario.Text, myHash));
             //En herramientas nugget añadir el siguiente comando para la encriptacion de contraseñas
             // Install-Package BCrypt-Official
             //Si registrais a alguien porfavor apuntar la contraseña ya que con el Hash esta se queda encriptada.

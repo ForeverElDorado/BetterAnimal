@@ -25,7 +25,7 @@ namespace BetterAnimal
             //this.Hide();
             //VentanaInicio v = new VentanaInicio();
             //v.Show();
-
+ 
             if (conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text))
             {
                 this.Hide();

@@ -23,9 +23,8 @@ namespace BetterAnimal
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = 
-                   
-                new MySqlCommand("SELECT * FROM prueba where usuario = @usuario ",conexion);
+                MySqlCommand consulta =     
+                new MySqlCommand("SELECT * FROM prueba where usuario = @usuario",conexion);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
@@ -54,15 +53,41 @@ namespace BetterAnimal
         /*CODIGO PARA INSERTAR USUARIOS EN LA BASE DE DATOS, HAY QUE AÑADIR STRING POR CAMPO (NOMBRE APELLIDOS TELEFONO EMAIL...)
          * 
          */
-        public String insertaUsuario(String DNI, String usuario, String contraseña)
+        //public String insertaUsuario(String DNI, String usuario, String contraseña)
+        //{
+        //    try
+        //    {
+        //        conexion.Open();
+        //        MySqlCommand consulta =
+        //            new MySqlCommand("INSERT INTO prueba (usuario, contraseña) VALUES (@Usuario, @contraseña)", conexion);
+        //            consulta.Parameters.AddWithValue("@usuario", usuario);
+        //            consulta.Parameters.AddWithValue("@contraseña", contraseña);
+
+        //        consulta.ExecuteNonQuery();
+
+        //        conexion.Close();
+        //        return "ok";
+        //    }
+        //    catch (MySqlException e)
+        //    {
+        //        return "error";
+        //    }
+        //}
+        public String insertaUsuario(String dni_cliente, String nombre_cliente, String apellido_cliente, String telefono, String chip_mascota, String email, String usuario, String contraseña)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO prueba (usuario, contraseña) VALUES (@Usuario, @contraseña)", conexion);
-                    consulta.Parameters.AddWithValue("@usuario", usuario);
-                    consulta.Parameters.AddWithValue("@contraseña", contraseña);
+                    new MySqlCommand("INSERT INTO cliente (dni_cliente, nombre_cliente, apellido_cliente, telefono, chip_mascota, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @direccion, @chip_mascota, @id, @usuario, @contraseña )", conexion);
+                consulta.Parameters.AddWithValue("@dni_cliente", dni_cliente);
+                consulta.Parameters.AddWithValue("@nombre_cliente", nombre_cliente);
+                consulta.Parameters.AddWithValue("@apellido_cliente", apellido_cliente);
+                consulta.Parameters.AddWithValue("@telefono", telefono);
+                consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
+                consulta.Parameters.AddWithValue("@email", email);
+                consulta.Parameters.AddWithValue("@usuario", usuario);
+                consulta.Parameters.AddWithValue("@contraseña", contraseña);
 
                 consulta.ExecuteNonQuery();
 
