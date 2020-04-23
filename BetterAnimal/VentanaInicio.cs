@@ -27,7 +27,9 @@ namespace BetterAnimal
 
         private void button2_Click(object sender, EventArgs e)
         {
-            VentanaRegistarUsuario ventana = new VentanaRegistarUsuario();
+           VentanaRegistarUsuario ventana = new VentanaRegistarUsuario();
+           // VentanaRegistarTrabajador ventana = new VentanaRegistarTrabajador();
+            //VentanaRegistarMascota ventana = new VentanaRegistarMascota();
             ventana.Show();
             this.Hide();
             //ventana inicio se oculta pero no se cierra la 

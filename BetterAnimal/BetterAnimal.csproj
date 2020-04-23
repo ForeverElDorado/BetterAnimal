@@ -53,6 +53,12 @@
     <Compile Include="VentanaLogin.Designer.cs">
       <DependentUpon>VentanaLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaRegistarTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaRegistarTrabajador.Designer.cs">
+      <DependentUpon>VentanaRegistarTrabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaRegistrarMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="VentanaLogin.resx">
       <DependentUpon>VentanaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaRegistarTrabajador.resx">
+      <DependentUpon>VentanaRegistarTrabajador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaRegistrarMascota.resx">
       <DependentUpon>VentanaRegistrarMascota.cs</DependentUpon>

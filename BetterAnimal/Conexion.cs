@@ -24,7 +24,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =     
-                new MySqlCommand("SELECT * FROM prueba where usuario = @usuario",conexion);
+                new MySqlCommand("SELECT * FROM cliente where usuario = @usuario",conexion);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
@@ -79,7 +79,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO cliente (dni_cliente, nombre_cliente, apellido_cliente, telefono, chip_mascota, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @direccion, @chip_mascota, @id, @usuario, @contraseña )", conexion);
+                    new MySqlCommand("INSERT INTO cliente (dni_cliente, nombre_cliente, apellido_cliente, telefono, chip_mascota, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @telefono, @chip_mascota, @email, @usuario, @contraseña )", conexion);
                 consulta.Parameters.AddWithValue("@dni_cliente", dni_cliente);
                 consulta.Parameters.AddWithValue("@nombre_cliente", nombre_cliente);
                 consulta.Parameters.AddWithValue("@apellido_cliente", apellido_cliente);
@@ -122,16 +122,16 @@ namespace BetterAnimal
                 return "error";
             }
         }
-        public String insertaTrabajador(String dni_tabajador, String nombre_trabajador, String apellido_trabajador, String telefono, String email, String usuario, String contraseña)
+        public String insertaTrabajador(String dni_trabajador, String nombre_trabajador, String apellido_trabajador, String telefono, String email, String usuario, String contraseña)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO trabajador (dni_tabajador, nombre_trabajador, apellido_trabajador, telefono, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @direccion, @chip_mascota, @id, @usuario, @contraseña )", conexion);
-                consulta.Parameters.AddWithValue("@dni_cliente", dni_tabajador);
-                consulta.Parameters.AddWithValue("@nombre_cliente", nombre_trabajador);
-                consulta.Parameters.AddWithValue("@apellido_cliente", apellido_trabajador);
+                    new MySqlCommand("INSERT INTO trabajador (dni_trabajador, nombre_trabajador, apellido_trabajador, telefono, email, usuario, contraseña ) VALUES (@dni_trabajador, @nombre_trabajador, @apellido_trabajador, @telefono, @email, @usuario, @contraseña)", conexion);
+                consulta.Parameters.AddWithValue("@dni_trabajador", dni_trabajador);
+                consulta.Parameters.AddWithValue("@nombre_trabajador", nombre_trabajador);
+                consulta.Parameters.AddWithValue("@apellido_trabajador", apellido_trabajador);
                 consulta.Parameters.AddWithValue("@telefono", telefono);
                 consulta.Parameters.AddWithValue("@email", email);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
