@@ -19,7 +19,7 @@ namespace BetterAnimal
         }
         private void buttonRegistrarPet_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(conexion.insertaMascota(textBoxNacimietoPet.Text, textBoxNombrePet.Text, textBoxRazaPet.Text, textBoxTrabajador, textBoxChip));
+            MessageBox.Show(conexion.insertaMascota(textBoxNacimietoPet.Text, textBoxNombrePet.Text, textBoxRazaPet.Text, textBoxTrabajador.Text, textBoxChip.Text));
 
         }
     }
