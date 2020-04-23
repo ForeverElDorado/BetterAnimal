@@ -73,7 +73,7 @@ namespace BetterAnimal
         //        return "error";
         //    }
         //}
-        public String insertaUsuario(String dni_cliente, String nombre_cliente, String apellido_cliente, String telefono, String chip_mascota, String email, String usuario, String contraseña)
+        public String insertaCliente(String dni_cliente, String nombre_cliente, String apellido_cliente, String telefono, String chip_mascota, String email, String usuario, String contraseña)
         {
             try
             {
@@ -85,6 +85,54 @@ namespace BetterAnimal
                 consulta.Parameters.AddWithValue("@apellido_cliente", apellido_cliente);
                 consulta.Parameters.AddWithValue("@telefono", telefono);
                 consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
+                consulta.Parameters.AddWithValue("@email", email);
+                consulta.Parameters.AddWithValue("@usuario", usuario);
+                consulta.Parameters.AddWithValue("@contraseña", contraseña);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "ok";
+            }
+            catch (MySqlException e)
+            {
+                return "error";
+            }
+        }
+        public String insertaMascota(String nombre_mascota, String chip_mascota, String nombre_trabajador, String raza_mascota, String fecha_na_mascota)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO prueba (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota)", conexion);
+                consulta.Parameters.AddWithValue("@nombre_mascota", nombre_mascota);
+                consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
+                consulta.Parameters.AddWithValue("@nombre_trabajador", nombre_trabajador);
+                consulta.Parameters.AddWithValue("@raza_mascota", raza_mascota);
+                consulta.Parameters.AddWithValue("@fecha_na_mascota", fecha_na_mascota);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "ok";
+            }
+            catch (MySqlException e)
+            {
+                return "error";
+            }
+        }
+        public String insertaTrabajador(String dni_tabajador, String nombre_trabajador, String apellido_trabajador, String telefono, String email, String usuario, String contraseña)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO cliente (dni_tabajador, nombre_trabajador, apellido_trabajador, telefono, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @direccion, @chip_mascota, @id, @usuario, @contraseña )", conexion);
+                consulta.Parameters.AddWithValue("@dni_cliente", dni_tabajador);
+                consulta.Parameters.AddWithValue("@nombre_cliente", nombre_trabajador);
+                consulta.Parameters.AddWithValue("@apellido_cliente", apellido_trabajador);
+                consulta.Parameters.AddWithValue("@telefono", telefono);
                 consulta.Parameters.AddWithValue("@email", email);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
                 consulta.Parameters.AddWithValue("@contraseña", contraseña);

@@ -34,12 +34,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.buttonRegistrarPet = new System.Windows.Forms.Button();
+            this.textBoxNombrePet = new System.Windows.Forms.TextBox();
+            this.textBoxNacimietoPet = new System.Windows.Forms.TextBox();
+            this.textBoxRazaPet = new System.Windows.Forms.TextBox();
+            this.textBoxChip = new System.Windows.Forms.TextBox();
+            this.textBoxTrabajador = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -104,49 +104,50 @@
             this.label6.Text = "Notificacion de campos rellenados";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // buttonRegistrarPet
             // 
-            this.button1.Location = new System.Drawing.Point(371, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 47);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRegistrarPet.Location = new System.Drawing.Point(371, 391);
+            this.buttonRegistrarPet.Name = "buttonRegistrarPet";
+            this.buttonRegistrarPet.Size = new System.Drawing.Size(124, 47);
+            this.buttonRegistrarPet.TabIndex = 6;
+            this.buttonRegistrarPet.Text = "Registrar";
+            this.buttonRegistrarPet.UseVisualStyleBackColor = true;
+            this.buttonRegistrarPet.Click += new System.EventHandler(this.buttonRegistrarPet_Click);
             // 
-            // textBox1
+            // textBoxNombrePet
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxNombrePet.Location = new System.Drawing.Point(12, 79);
+            this.textBoxNombrePet.Name = "textBoxNombrePet";
+            this.textBoxNombrePet.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNombrePet.TabIndex = 7;
             // 
-            // textBox2
+            // textBoxNacimietoPet
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 128);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(119, 20);
-            this.textBox2.TabIndex = 8;
+            this.textBoxNacimietoPet.Location = new System.Drawing.Point(16, 128);
+            this.textBoxNacimietoPet.Name = "textBoxNacimietoPet";
+            this.textBoxNacimietoPet.Size = new System.Drawing.Size(119, 20);
+            this.textBoxNacimietoPet.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxRazaPet
             // 
-            this.textBox3.Location = new System.Drawing.Point(664, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 20);
-            this.textBox3.TabIndex = 9;
+            this.textBoxRazaPet.Location = new System.Drawing.Point(664, 79);
+            this.textBoxRazaPet.Name = "textBoxRazaPet";
+            this.textBoxRazaPet.Size = new System.Drawing.Size(206, 20);
+            this.textBoxRazaPet.TabIndex = 9;
             // 
-            // textBox4
+            // textBoxChip
             // 
-            this.textBox4.Location = new System.Drawing.Point(664, 128);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 20);
-            this.textBox4.TabIndex = 10;
+            this.textBoxChip.Location = new System.Drawing.Point(664, 128);
+            this.textBoxChip.Name = "textBoxChip";
+            this.textBoxChip.Size = new System.Drawing.Size(206, 20);
+            this.textBoxChip.TabIndex = 10;
             // 
-            // textBox5
+            // textBoxTrabajador
             // 
-            this.textBox5.Location = new System.Drawing.Point(322, 295);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(228, 20);
-            this.textBox5.TabIndex = 11;
+            this.textBoxTrabajador.Location = new System.Drawing.Point(322, 295);
+            this.textBoxTrabajador.Name = "textBoxTrabajador";
+            this.textBoxTrabajador.Size = new System.Drawing.Size(228, 20);
+            this.textBoxTrabajador.TabIndex = 11;
             // 
             // pictureBox1
             // 
@@ -163,12 +164,12 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(894, 536);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBoxTrabajador);
+            this.Controls.Add(this.textBoxChip);
+            this.Controls.Add(this.textBoxRazaPet);
+            this.Controls.Add(this.textBoxNacimietoPet);
+            this.Controls.Add(this.textBoxNombrePet);
+            this.Controls.Add(this.buttonRegistrarPet);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -192,12 +193,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button buttonRegistrarPet;
+        private System.Windows.Forms.TextBox textBoxNombrePet;
+        private System.Windows.Forms.TextBox textBoxNacimietoPet;
+        private System.Windows.Forms.TextBox textBoxRazaPet;
+        private System.Windows.Forms.TextBox textBoxChip;
+        private System.Windows.Forms.TextBox textBoxTrabajador;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
