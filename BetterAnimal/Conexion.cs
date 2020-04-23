@@ -105,7 +105,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO prueba (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota)", conexion);
+                    new MySqlCommand("INSERT INTO mascotas (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota)", conexion);
                 consulta.Parameters.AddWithValue("@nombre_mascota", nombre_mascota);
                 consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
                 consulta.Parameters.AddWithValue("@nombre_trabajador", nombre_trabajador);
@@ -128,7 +128,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO cliente (dni_tabajador, nombre_trabajador, apellido_trabajador, telefono, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @direccion, @chip_mascota, @id, @usuario, @contraseña )", conexion);
+                    new MySqlCommand("INSERT INTO trabajador (dni_tabajador, nombre_trabajador, apellido_trabajador, telefono, email, usuario, contraseña ) VALUES (@dni_cliente, @nombre_cliente, @apellido_cliente, @direccion, @chip_mascota, @id, @usuario, @contraseña )", conexion);
                 consulta.Parameters.AddWithValue("@dni_cliente", dni_tabajador);
                 consulta.Parameters.AddWithValue("@nombre_cliente", nombre_trabajador);
                 consulta.Parameters.AddWithValue("@apellido_cliente", apellido_trabajador);
