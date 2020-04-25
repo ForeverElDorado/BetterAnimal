@@ -166,5 +166,23 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        public DataTable getClientes()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM cliente ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable clientes = new DataTable();
+                clientes.Load(resultado);
+                conexion.Close();
+                return clientes;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }

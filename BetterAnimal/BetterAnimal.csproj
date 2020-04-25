@@ -46,7 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Citas\RegistarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas\RegistarVacuna.Designer.cs">
+      <DependentUpon>RegistarVacuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Citas\RegistrarPeluqueria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas\RegistrarPeluqueria.Designer.cs">
+      <DependentUpon>RegistrarPeluqueria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Citas\RegistrarRevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Citas\RegistrarRevision.Designer.cs">
+      <DependentUpon>RegistrarRevision.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Trabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajador.Designer.cs">
+      <DependentUpon>Trabajador.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +109,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Citas\RegistarVacuna.resx">
+      <DependentUpon>RegistarVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Citas\RegistrarPeluqueria.resx">
+      <DependentUpon>RegistrarPeluqueria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Citas\RegistrarRevision.resx">
+      <DependentUpon>RegistrarRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajador.resx">
+      <DependentUpon>Trabajador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaCliente.resx">
       <DependentUpon>VentanaCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +168,9 @@
     <PackageReference Include="MySql.Data">
       <Version>8.0.19</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Trabajador\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
