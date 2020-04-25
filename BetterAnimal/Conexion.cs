@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -145,6 +146,24 @@ namespace BetterAnimal
             catch (MySqlException e)
             {
                 return "error";
+            }
+        }
+        public DataTable getMascotas()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM mascotas ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
             }
         }
     }
