@@ -38,6 +38,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
@@ -99,6 +103,10 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox1);
@@ -126,7 +134,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(263, 27);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
+            this.textBox1.Size = new System.Drawing.Size(197, 20);
             this.textBox1.TabIndex = 1;
             // 
             // button1
@@ -148,6 +156,44 @@
             this.label2.Size = new System.Drawing.Size(406, 49);
             this.label2.TabIndex = 3;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(466, 96);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.buscarMascota);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(293, 96);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(167, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(288, 24);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Introducir Chip de la Mascota:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(184, 228);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(406, 49);
+            this.label4.TabIndex = 7;
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Trabajador
             // 
@@ -180,5 +226,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

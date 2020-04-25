@@ -201,5 +201,22 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        public DataTable getAnimalPorChip(String chip)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascotas where chip_mascota = '" + chip + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }
