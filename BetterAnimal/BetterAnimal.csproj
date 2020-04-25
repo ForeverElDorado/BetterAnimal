@@ -65,6 +65,12 @@
       <DependentUpon>RegistrarRevision.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
+    <Compile Include="InfoClienteBuscado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoClienteBuscado.Designer.cs">
+      <DependentUpon>InfoClienteBuscado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Trabajador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="Citas\RegistrarRevision.resx">
       <DependentUpon>RegistrarRevision.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InfoClienteBuscado.resx">
+      <DependentUpon>InfoClienteBuscado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Trabajador.resx">
       <DependentUpon>Trabajador.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,8 +178,6 @@
       <Version>8.0.19</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Trabajador\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

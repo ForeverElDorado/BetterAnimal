@@ -44,10 +44,11 @@ namespace BetterAnimal.Trabajador
 
                 // VentanaPrincipal.idActual = int.Parse(clienteporDNI.Rows[0]["dni_cliente"].ToString());
                 // this.mainForm.enseñaPokemon(VentanaPrincipal.idActual);
+                //InfoClienteBuscado.dni = int.Parse(mascotaPorChip.Rows[0]["dni_cliente"].ToString());
                 //VentanaCliente ventana = new VentanaCliente();
                 //ventana.Show();
                 //this.Hide();
-                
+
             }
 
         }
@@ -65,6 +66,7 @@ namespace BetterAnimal.Trabajador
 
                 // VentanaPrincipal.idActual = int.Parse(clienteporDNI.Rows[0]["dni_cliente"].ToString());
                 // this.mainForm.enseñaPokemon(VentanaPrincipal.idActual);
+                //InfoClienteBuscado.dni =  int.Parse(mascotaPorChip.Rows[0]["chip_mascota"].ToString());
                 VentanaCliente ventana = new VentanaCliente();
                 ventana.Show();
                 this.Hide();
