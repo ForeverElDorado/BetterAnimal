@@ -184,5 +184,22 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        public DataTable getClientePorDNI(String dni)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM cliente where dni_cliente = '" + dni + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable clientes = new DataTable();
+                clientes.Load(resultado);
+                conexion.Close();
+                return clientes;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }
