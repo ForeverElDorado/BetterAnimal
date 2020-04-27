@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -145,6 +146,76 @@ namespace BetterAnimal
             catch (MySqlException e)
             {
                 return "error";
+            }
+        }
+        public DataTable getMascotas()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM mascotas ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+        public DataTable getClientes()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM cliente ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable clientes = new DataTable();
+                clientes.Load(resultado);
+                conexion.Close();
+                return clientes;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+        public DataTable getClientePorDNI(String dni)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM cliente where dni_cliente = '" + dni + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable clientes = new DataTable();
+                clientes.Load(resultado);
+                conexion.Close();
+                return clientes;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+        public DataTable getAnimalPorChip(String chip)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascotas where chip_mascota = '" + chip + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
             }
         }
     }
