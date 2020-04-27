@@ -76,7 +76,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 23);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Telefono:";
+            this.label3.Text = "Teléfono:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label4
@@ -161,7 +161,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(278, 70);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Telefonos particulares con prefijo";
+            this.label7.Text = "Teléfonos particulares con prefijo";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxContraseña
