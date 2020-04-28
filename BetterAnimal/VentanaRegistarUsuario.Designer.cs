@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaRegistarUsuario));
             this.tsss = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.buttonRegistrarse = new System.Windows.Forms.Button();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.textBoxApellidos = new System.Windows.Forms.TextBox();
@@ -99,16 +99,6 @@
             this.label5.Text = "Email:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(116, 362);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(278, 70);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Notificacion de campos rellenados";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // buttonRegistrarse
             // 
             this.buttonRegistrarse.Location = new System.Drawing.Point(487, 314);
@@ -157,7 +147,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(333, 205);
+            this.label7.Location = new System.Drawing.Point(333, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(278, 70);
             this.label7.TabIndex = 13;
@@ -220,6 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Cyan;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBoxChip);
             this.Controls.Add(this.label9);
@@ -234,13 +225,14 @@
             this.Controls.Add(this.textBoxApellidos);
             this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.buttonRegistrarse);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tsss);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "VentanaRegistarUsuario";
             this.Text = "Registrar Nuevo Usuario";
             this.ResumeLayout(false);
@@ -255,7 +247,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonRegistrarse;
         private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.TextBox textBoxApellidos;

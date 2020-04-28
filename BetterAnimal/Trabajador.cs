@@ -18,6 +18,8 @@ namespace BetterAnimal.Trabajador
 
         DataTable clientePorDNI = new DataTable();
         DataTable mascotaPorChip = new DataTable();
+
+        public int DniSeleccionado;
         public Trabajador()
         {
             InitializeComponent();
@@ -41,9 +43,6 @@ namespace BetterAnimal.Trabajador
             }
             else
             {
-
-
-                // 
                 //InfoClienteBuscado.dni = int.Parse(mascotaPorChip.Rows[0]["dni_cliente"].ToString());
                 InfoClienteBuscado.DNIactual = int.Parse(clientePorDNI.Rows[0]["dni_cliente"].ToString());
                 InfoClienteBuscado ventana = new InfoClienteBuscado();
@@ -74,6 +73,41 @@ namespace BetterAnimal.Trabajador
                 this.Hide();
 
             }
+        }
+
+        private void registrarMascota(object sender, EventArgs e)
+        {
+            VentanaRegistarMascota ventana = new VentanaRegistarMascota();
+            ventana.Show();
+          
+        }
+
+        private void registrarTrabajador(object sender, EventArgs e)
+        {
+            VentanaRegistarTrabajador ventana = new VentanaRegistarTrabajador();
+            ventana.Show();
+           
+        }
+
+        private void registrarCliente(object sender, EventArgs e)
+        {
+            VentanaRegistarUsuario ventana = new VentanaRegistarUsuario();
+            ventana.Show();
+            
+        }
+
+        private void dataGridMascotas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            DniSeleccionado = Convert.ToInt32(dataGridClientes.Rows[e.RowIndex].Cells["dni_cliente"].Value.ToString());
+            InfoClienteBuscado ventana = new InfoClienteBuscado();
+            DniSeleccionado = InfoClienteBuscado.DNIactual;
+            ventana.Show();
         }
     }
 }

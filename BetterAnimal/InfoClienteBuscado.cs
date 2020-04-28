@@ -14,7 +14,7 @@ namespace BetterAnimal
     {
         Conexion conexion = new Conexion();
         DataTable clientes = new DataTable();
-        public static int DNIactual = 0; //el id del usuario yo que se lo que marca que usuario buscaste.
+        public static int DNIactual; //el id del usuario yo que se lo que marca que usuario buscaste.
         public InfoClienteBuscado()
         {
             InitializeComponent();
@@ -27,8 +27,13 @@ namespace BetterAnimal
             //misPokemons = miConexion.getPokemonPorId(id);
             //nombrePokemon.Text = misPokemons.Rows[0]["nombre"].ToString();
             clientes = conexion.getClientePorDNI(dni);
-            //labelNombre.Text = clientes.Rows[0]["nombre_cliente"].ToString;
+            labelDNI.Text = "nombre" + clientes.Rows[0]["dni_cliente"].ToString();
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            enseñaCliente(DNIactual.ToString());
         }
     }
 }
