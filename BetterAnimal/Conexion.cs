@@ -10,8 +10,10 @@ using MySql.Data.MySqlClient.Authentication;
 namespace BetterAnimal
 {
     //WRITTEN AND DIRECTED BY ALVARO GARCIA HERRERO
+    
     class Conexion
     {
+        public string clienteActual;
         public MySqlConnection conexion;
 
         public Conexion()
@@ -28,6 +30,7 @@ namespace BetterAnimal
                 new MySqlCommand("SELECT * FROM cliente where usuario = @usuario",conexion);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
                 MySqlDataReader resultado = consulta.ExecuteReader();
+
 
                 if (resultado.Read())
                 {
@@ -130,18 +133,19 @@ namespace BetterAnimal
                 return "error";
             }
         }
-        public String insertaMascota(String nombre_mascota, String chip_mascota, String nombre_trabajador, String raza_mascota, String fecha_na_mascota)
+        public String insertaMascota(String nombre_mascota, String chip_mascota, String nombre_trabajador, String raza_mascota, String fecha_na_mascota, String dni_cliente)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO mascota (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota)", conexion);
+                    new MySqlCommand("INSERT INTO mascota (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota, dni_cliente) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota, @dni_cliente)", conexion);
                 consulta.Parameters.AddWithValue("@nombre_mascota", nombre_mascota);
                 consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
                 consulta.Parameters.AddWithValue("@nombre_trabajador", nombre_trabajador);
                 consulta.Parameters.AddWithValue("@raza_mascota", raza_mascota);
                 consulta.Parameters.AddWithValue("@fecha_na_mascota", fecha_na_mascota);
+                consulta.Parameters.AddWithValue("@dni_cliente", dni_cliente);
 
                 consulta.ExecuteNonQuery();
 
@@ -184,7 +188,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT * FROM mascota ", conexion);
+                    new MySqlCommand("SELECT * FROM mascota", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
@@ -248,6 +252,23 @@ namespace BetterAnimal
                 throw e;
             }
         }
-        
+        public DataTable getTienda()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM tienda ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable clientes = new DataTable();
+                clientes.Load(resultado);
+                conexion.Close();
+                return clientes;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }

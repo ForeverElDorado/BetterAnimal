@@ -14,12 +14,17 @@ namespace BetterAnimal
     {
         Conexion conexion = new Conexion();
         DataTable misMascotas = new DataTable();
+        DataTable tienda = new DataTable();
         public VentanaCliente()
         {
             InitializeComponent();
             tablaMascotas.DataSource = conexion.getMascotas();
             tablaMascotas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             tablaMascotas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridTienda.DataSource = conexion.getTienda();
+            dataGridTienda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridTienda.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
         }
 
         private void botonRegistrarMascota(object sender, EventArgs e)

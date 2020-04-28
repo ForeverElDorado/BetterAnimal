@@ -28,6 +28,7 @@ namespace BetterAnimal
  
             if (conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text))
             {
+                conexion.clienteActual = textBoxUsuario.Text;
                 this.Hide();
                 VentanaCliente v = new VentanaCliente();
                 v.Show();

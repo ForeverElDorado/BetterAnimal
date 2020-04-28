@@ -41,6 +41,8 @@
             this.textBoxChip = new System.Windows.Forms.TextBox();
             this.textBoxTrabajador = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textDni = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,13 +151,32 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // textDni
+            // 
+            this.textDni.Location = new System.Drawing.Point(650, 262);
+            this.textDni.Name = "textDni";
+            this.textDni.Size = new System.Drawing.Size(206, 20);
+            this.textDni.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(657, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 23);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "DNI del cliente:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // VentanaRegistarMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(894, 425);
+            this.ClientSize = new System.Drawing.Size(894, 386);
+            this.Controls.Add(this.textDni);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxTrabajador);
             this.Controls.Add(this.textBoxChip);
@@ -193,5 +214,7 @@
         private System.Windows.Forms.TextBox textBoxChip;
         private System.Windows.Forms.TextBox textBoxTrabajador;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textDni;
+        private System.Windows.Forms.Label label6;
     }
 }
