@@ -18,8 +18,10 @@ namespace BetterAnimal.Trabajador
 
         DataTable clientePorDNI = new DataTable();
         DataTable mascotaPorChip = new DataTable();
+        DataTable chips = new DataTable();
 
-        public int DniSeleccionado;
+        string dni;
+        string chip;
         public Trabajador()
         {
             InitializeComponent();
@@ -98,16 +100,24 @@ namespace BetterAnimal.Trabajador
 
         private void dataGridMascotas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            chip = dataGridMascotas.Rows[e.RowIndex].Cells["chip_mascota"].Value.ToString();
+            MessageBox.Show(chip);
         }
 
         private void dataGridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            DniSeleccionado = Convert.ToInt32(dataGridClientes.Rows[e.RowIndex].Cells["dni_cliente"].Value.ToString());
+
+            dni = dataGridMascotas.Rows[e.RowIndex].Cells["dni_cliente"].Value.ToString();
+            MessageBox.Show(chip);
             InfoClienteBuscado ventana = new InfoClienteBuscado();
-            DniSeleccionado = InfoClienteBuscado.DNIactual;
             ventana.Show();
+        }
+
+        private void tabControl1_Enter(object sender, EventArgs e)
+        {
+            chips = conexion.getAllClientes(chip);
+            labelNombre.Text = "Nombre" + chips.Rows[0]["nombre_cliente"].ToString();
+
         }
     }
 }

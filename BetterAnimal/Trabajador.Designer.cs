@@ -46,6 +46,17 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.labelTelefono = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelDNI = new System.Windows.Forms.Label();
+            this.labelApellidos = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
@@ -53,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClientes)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +77,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabControl1.Location = new System.Drawing.Point(-2, 1);
             this.tabControl1.Multiline = true;
@@ -74,6 +87,7 @@
             this.tabControl1.Size = new System.Drawing.Size(801, 446);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
             // tabPage1
             // 
@@ -89,7 +103,7 @@
             // dataGridMascotas
             // 
             this.dataGridMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridMascotas.Location = new System.Drawing.Point(74, 48);
+            this.dataGridMascotas.Location = new System.Drawing.Point(94, 37);
             this.dataGridMascotas.Name = "dataGridMascotas";
             this.dataGridMascotas.Size = new System.Drawing.Size(642, 306);
             this.dataGridMascotas.TabIndex = 0;
@@ -217,7 +231,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(789, 413);
+            this.tabPage4.Size = new System.Drawing.Size(793, 413);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Registros";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -252,6 +266,136 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.registrarMascota);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.labelTelefono);
+            this.tabPage5.Controls.Add(this.labelEmail);
+            this.tabPage5.Controls.Add(this.labelDNI);
+            this.tabPage5.Controls.Add(this.labelApellidos);
+            this.tabPage5.Controls.Add(this.labelNombre);
+            this.tabPage5.Controls.Add(this.label5);
+            this.tabPage5.Controls.Add(this.label6);
+            this.tabPage5.Controls.Add(this.label7);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(793, 413);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // labelTelefono
+            // 
+            this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTelefono.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelTelefono.Location = new System.Drawing.Point(208, 239);
+            this.labelTelefono.Name = "labelTelefono";
+            this.labelTelefono.Size = new System.Drawing.Size(262, 30);
+            this.labelTelefono.TabIndex = 19;
+            this.labelTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelEmail.Location = new System.Drawing.Point(208, 192);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(262, 30);
+            this.labelEmail.TabIndex = 18;
+            this.labelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelDNI
+            // 
+            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelDNI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDNI.Location = new System.Drawing.Point(208, 147);
+            this.labelDNI.Name = "labelDNI";
+            this.labelDNI.Size = new System.Drawing.Size(262, 30);
+            this.labelDNI.TabIndex = 17;
+            this.labelDNI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelApellidos
+            // 
+            this.labelApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelApellidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelApellidos.Location = new System.Drawing.Point(208, 105);
+            this.labelApellidos.Name = "labelApellidos";
+            this.labelApellidos.Size = new System.Drawing.Size(262, 30);
+            this.labelApellidos.TabIndex = 16;
+            this.labelApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNombre.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNombre.Location = new System.Drawing.Point(208, 61);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(262, 30);
+            this.labelNombre.TabIndex = 15;
+            this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.Location = new System.Drawing.Point(97, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 30);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "DNI:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label6.Location = new System.Drawing.Point(97, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 30);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Email:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.Location = new System.Drawing.Point(97, 239);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 30);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Telefono:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label8.Location = new System.Drawing.Point(97, 105);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 30);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Apellidos:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Location = new System.Drawing.Point(97, 61);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 30);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Nombre:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +417,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,5 +442,16 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label labelTelefono;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelDNI;
+        private System.Windows.Forms.Label labelApellidos;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

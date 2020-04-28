@@ -18,6 +18,7 @@ namespace BetterAnimal
         public InfoClienteBuscado()
         {
             InitializeComponent();
+           
         }
         public void enseñaCliente(String dni)
         {

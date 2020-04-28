@@ -200,6 +200,24 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        //public DataTable getAllMascotas(string nombre)
+        //{
+        //    try
+        //    {
+        //        conexion.Open();
+        //        MySqlCommand consulta =
+        //            new MySqlCommand("SELECT * FROM mascota", conexion);
+        //        MySqlDataReader resultado = consulta.ExecuteReader();
+        //        DataTable mascotas = new DataTable();
+        //        mascotas.Load(resultado);
+        //        conexion.Close();
+        //        return mascotas;
+        //    }
+        //    catch (MySqlException e)
+        //    {
+        //        throw e;
+        //    }
+        //}
         public DataTable getClientes()
         {
             try
@@ -207,6 +225,24 @@ namespace BetterAnimal
                 conexion.Open();
                 MySqlCommand consulta =
                     new MySqlCommand("SELECT * FROM cliente ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable clientes = new DataTable();
+                clientes.Load(resultado);
+                conexion.Close();
+                return clientes;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+        public DataTable getAllClientes(string nombre)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM cliente WHERE dni_cliente like '" + nombre + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable clientes = new DataTable();
                 clientes.Load(resultado);
