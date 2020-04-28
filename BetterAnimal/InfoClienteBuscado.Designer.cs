@@ -33,11 +33,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.labelApellidos = new System.Windows.Forms.Label();
+            this.labelDNI = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelTelefono = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -95,71 +95,71 @@
             this.label5.Text = "DNI:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // labelNombre
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Location = new System.Drawing.Point(173, 53);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(262, 30);
-            this.label6.TabIndex = 5;
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNombre.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNombre.Location = new System.Drawing.Point(173, 53);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(262, 30);
+            this.labelNombre.TabIndex = 5;
+            this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // labelApellidos
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Location = new System.Drawing.Point(173, 97);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(262, 30);
-            this.label7.TabIndex = 6;
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelApellidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelApellidos.Location = new System.Drawing.Point(173, 97);
+            this.labelApellidos.Name = "labelApellidos";
+            this.labelApellidos.Size = new System.Drawing.Size(262, 30);
+            this.labelApellidos.TabIndex = 6;
+            this.labelApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label8
+            // labelDNI
             // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label8.Location = new System.Drawing.Point(173, 139);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(262, 30);
-            this.label8.TabIndex = 7;
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelDNI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDNI.Location = new System.Drawing.Point(173, 139);
+            this.labelDNI.Name = "labelDNI";
+            this.labelDNI.Size = new System.Drawing.Size(262, 30);
+            this.labelDNI.TabIndex = 7;
+            this.labelDNI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // labelEmail
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Location = new System.Drawing.Point(173, 184);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(262, 30);
-            this.label9.TabIndex = 8;
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelEmail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelEmail.Location = new System.Drawing.Point(173, 184);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(262, 30);
+            this.labelEmail.TabIndex = 8;
+            this.labelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label10
+            // labelTelefono
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(173, 231);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(262, 30);
-            this.label10.TabIndex = 9;
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelTelefono.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelTelefono.Location = new System.Drawing.Point(173, 231);
+            this.labelTelefono.Name = "labelTelefono";
+            this.labelTelefono.Size = new System.Drawing.Size(262, 30);
+            this.labelTelefono.TabIndex = 9;
+            this.labelTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // InfoClienteBuscado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelTelefono);
+            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(this.labelDNI);
+            this.Controls.Add(this.labelApellidos);
+            this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -178,10 +178,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label labelApellidos;
+        private System.Windows.Forms.Label labelDNI;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelTelefono;
     }
 }

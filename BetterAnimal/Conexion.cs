@@ -9,6 +9,7 @@ using MySql.Data.MySqlClient.Authentication;
 
 namespace BetterAnimal
 {
+    //WRITTEN AND DIRECTED BY ALVARO GARCIA HERRERO
     class Conexion
     {
         public MySqlConnection conexion;
@@ -18,7 +19,6 @@ namespace BetterAnimal
             conexion = new MySqlConnection("Server = 127.0.0.1; Database = veterinario; Uid = root; Pwd =; Port = 3306");
         }
 
-        // public String loginVeterinario(String usuario, String contraseña)
         public Boolean loginVeterinario(String usuario, String contraseña)
         {
             try
@@ -32,14 +32,44 @@ namespace BetterAnimal
                 if (resultado.Read())
                 {
                     //AQUI SE CHEQUEA LA CONTRASEÑA DE HASH
-                    //nombre de la columna ¿1?
+                    //EL CODIGO ESTA CORRECTO PALABRA DE FRAXITO SI FALLA ES POR EL XAMPP
                     string passwordConHash = resultado.GetString("contraseña");
                     if(BCrypt.Net.BCrypt.Verify(contraseña, passwordConHash))
                     {
                         return true;
                     }
                     return false;
-                    // return resultado.GetString(1);
+                }
+                conexion.Close();
+                //return "error de usuario/contraseña";
+                return false;
+            }
+            catch (MySqlException e)
+            {
+                // return "error";
+                return false;
+            }
+        }
+        public Boolean loginTrabajador(String usuario, String contraseña)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                new MySqlCommand("SELECT * FROM trabajador where usuario = @usuario", conexion);
+                consulta.Parameters.AddWithValue("@usuario", usuario);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+
+                if (resultado.Read())
+                {
+                    //AQUI SE CHEQUEA LA CONTRASEÑA DE HASH
+                    //EL CODIGO ESTA CORRECTO PALABRA DE FRAXITO SI FALLA ES POR EL XAMPP
+                    string passwordConHash = resultado.GetString("contraseña");
+                    if (BCrypt.Net.BCrypt.Verify(contraseña, passwordConHash))
+                    {
+                        return true;
+                    }
+                    return false;
                 }
                 conexion.Close();
                 //return "error de usuario/contraseña";
@@ -106,7 +136,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO mascotas (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota)", conexion);
+                    new MySqlCommand("INSERT INTO mascota (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota)", conexion);
                 consulta.Parameters.AddWithValue("@nombre_mascota", nombre_mascota);
                 consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
                 consulta.Parameters.AddWithValue("@nombre_trabajador", nombre_trabajador);
@@ -154,7 +184,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT * FROM mascotas ", conexion);
+                    new MySqlCommand("SELECT * FROM mascota ", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
@@ -218,5 +248,6 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        
     }
 }

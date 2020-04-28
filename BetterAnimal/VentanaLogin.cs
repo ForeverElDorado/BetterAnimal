@@ -29,7 +29,13 @@ namespace BetterAnimal
             if (conexion.loginVeterinario(textBoxUsuario.Text, textBoxContraseña.Text))
             {
                 this.Hide();
-                VentanaInicio v = new VentanaInicio();
+                VentanaCliente v = new VentanaCliente();
+                v.Show();
+            }
+            if (conexion.loginTrabajador(textBoxUsuario.Text, textBoxContraseña.Text))
+            {
+                this.Hide();
+                Trabajador.Trabajador v = new Trabajador.Trabajador();
                 v.Show();
             }
             else

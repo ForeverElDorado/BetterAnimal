@@ -16,7 +16,8 @@ namespace BetterAnimal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Trabajador.Trabajador());
+           // Application.Run(new Trabajador.Trabajador());
+           Application.Run(new VentanaLogin());
         }
     }
 }
