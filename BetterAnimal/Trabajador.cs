@@ -33,6 +33,18 @@ namespace BetterAnimal.Trabajador
             dataGridMascotas.DataSource = conexion.getMascotas();
             dataGridMascotas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridMascotas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            //Tabla Revisiones
+            dataGridRevision.DataSource = conexion.getRevision();
+            dataGridRevision.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridRevision.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            //Tabla Vacunas
+            dataGridVacunas.DataSource = conexion.getVacunas();
+            dataGridVacunas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridVacunas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            //Tabla Peluqueria
+            dataGridPelo.DataSource = conexion.getPeluqueria();
+            dataGridPelo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridPelo.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
         private void buscarCliente(object sender, EventArgs e)
         {
@@ -116,8 +128,27 @@ namespace BetterAnimal.Trabajador
         private void tabControl1_Enter(object sender, EventArgs e)
         {
             chips = conexion.getAllClientes(chip);
-            labelNombre.Text = "Nombre" + chips.Rows[0]["nombre_cliente"].ToString();
+           // labelNombre.Text = "Nombre" + chips.Rows[1]["nombre_cliente"].ToString();
 
+        }
+
+        private void botonRegistrarVacuna(object sender, EventArgs e)
+        {
+            Citas.RegistarVacuna ventana = new Citas.RegistarVacuna();
+            ventana.Show();
+                    
+        }
+
+        private void botonRegistrarPeluqueria(object sender, EventArgs e)
+        {
+            Citas.RegistrarPeluqueria ventana = new Citas.RegistrarPeluqueria();
+            ventana.Show();
+        }
+
+        private void botonRegistrarRevision(object sender, EventArgs e)
+        {
+            Citas.RegistrarRevision ventana = new Citas.RegistrarRevision();
+            ventana.Show();
         }
     }
 }

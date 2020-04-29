@@ -57,6 +57,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridRevision = new System.Windows.Forms.DataGridView();
+            this.dataGridPelo = new System.Windows.Forms.DataGridView();
+            this.dataGridVacunas = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
@@ -65,6 +72,10 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVacunas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,6 +89,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabControl1.Location = new System.Drawing.Point(-2, 1);
             this.tabControl1.Multiline = true;
@@ -396,6 +408,76 @@
             this.label9.Text = "Nombre:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tabPage6.Controls.Add(this.button8);
+            this.tabPage6.Controls.Add(this.button7);
+            this.tabPage6.Controls.Add(this.button6);
+            this.tabPage6.Controls.Add(this.dataGridRevision);
+            this.tabPage6.Controls.Add(this.dataGridPelo);
+            this.tabPage6.Controls.Add(this.dataGridVacunas);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(793, 413);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Citas";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(630, 341);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(97, 44);
+            this.button8.TabIndex = 5;
+            this.button8.Text = "Registrar  Revision";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.botonRegistrarRevision);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(358, 341);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(97, 44);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Registrar  Peluqueria";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.botonRegistrarPeluqueria);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(82, 341);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(97, 44);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Registrar  Vacuna";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.botonRegistrarVacuna);
+            // 
+            // dataGridRevision
+            // 
+            this.dataGridRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRevision.Location = new System.Drawing.Point(546, 20);
+            this.dataGridRevision.Name = "dataGridRevision";
+            this.dataGridRevision.Size = new System.Drawing.Size(240, 302);
+            this.dataGridRevision.TabIndex = 2;
+            // 
+            // dataGridPelo
+            // 
+            this.dataGridPelo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPelo.Location = new System.Drawing.Point(283, 20);
+            this.dataGridPelo.Name = "dataGridPelo";
+            this.dataGridPelo.Size = new System.Drawing.Size(240, 302);
+            this.dataGridPelo.TabIndex = 1;
+            // 
+            // dataGridVacunas
+            // 
+            this.dataGridVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridVacunas.Location = new System.Drawing.Point(22, 20);
+            this.dataGridVacunas.Name = "dataGridVacunas";
+            this.dataGridVacunas.Size = new System.Drawing.Size(240, 302);
+            this.dataGridVacunas.TabIndex = 0;
+            // 
             // Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +500,10 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVacunas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,5 +539,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.DataGridView dataGridRevision;
+        private System.Windows.Forms.DataGridView dataGridPelo;
+        private System.Windows.Forms.DataGridView dataGridVacunas;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
     }
 }
