@@ -52,11 +52,6 @@
             this.labelDNI = new System.Windows.Forms.Label();
             this.labelApellidos = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -64,6 +59,14 @@
             this.dataGridRevision = new System.Windows.Forms.DataGridView();
             this.dataGridPelo = new System.Windows.Forms.DataGridView();
             this.dataGridVacunas = new System.Windows.Forms.DataGridView();
+            this.labelFechaNa = new System.Windows.Forms.Label();
+            this.labelNombre_Trabajador = new System.Windows.Forms.Label();
+            this.labelNombre_mascota = new System.Windows.Forms.Label();
+            this.labelChip_mascota = new System.Windows.Forms.Label();
+            this.labelDNI_mascota = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelRaza = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
@@ -139,7 +142,7 @@
             this.dataGridClientes.Name = "dataGridClientes";
             this.dataGridClientes.Size = new System.Drawing.Size(668, 314);
             this.dataGridClientes.TabIndex = 0;
-            this.dataGridClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellDoubleClick);
+            this.dataGridClientes.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClientes_CellContentDoubleClick);
             // 
             // tabPage3
             // 
@@ -280,16 +283,19 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.labelRaza);
+            this.tabPage5.Controls.Add(this.label11);
+            this.tabPage5.Controls.Add(this.label10);
+            this.tabPage5.Controls.Add(this.labelFechaNa);
+            this.tabPage5.Controls.Add(this.labelNombre_Trabajador);
+            this.tabPage5.Controls.Add(this.labelNombre_mascota);
+            this.tabPage5.Controls.Add(this.labelChip_mascota);
+            this.tabPage5.Controls.Add(this.labelDNI_mascota);
             this.tabPage5.Controls.Add(this.labelTelefono);
             this.tabPage5.Controls.Add(this.labelEmail);
             this.tabPage5.Controls.Add(this.labelDNI);
             this.tabPage5.Controls.Add(this.labelApellidos);
             this.tabPage5.Controls.Add(this.labelNombre);
-            this.tabPage5.Controls.Add(this.label5);
-            this.tabPage5.Controls.Add(this.label6);
-            this.tabPage5.Controls.Add(this.label7);
-            this.tabPage5.Controls.Add(this.label8);
-            this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -303,7 +309,7 @@
             this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelTelefono.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelTelefono.Location = new System.Drawing.Point(208, 239);
+            this.labelTelefono.Location = new System.Drawing.Point(54, 265);
             this.labelTelefono.Name = "labelTelefono";
             this.labelTelefono.Size = new System.Drawing.Size(262, 30);
             this.labelTelefono.TabIndex = 19;
@@ -314,7 +320,7 @@
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelEmail.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelEmail.Location = new System.Drawing.Point(208, 192);
+            this.labelEmail.Location = new System.Drawing.Point(54, 218);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(262, 30);
             this.labelEmail.TabIndex = 18;
@@ -325,7 +331,7 @@
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelDNI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelDNI.Location = new System.Drawing.Point(208, 147);
+            this.labelDNI.Location = new System.Drawing.Point(54, 173);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(262, 30);
             this.labelDNI.TabIndex = 17;
@@ -336,7 +342,7 @@
             this.labelApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelApellidos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelApellidos.Location = new System.Drawing.Point(208, 105);
+            this.labelApellidos.Location = new System.Drawing.Point(54, 131);
             this.labelApellidos.Name = "labelApellidos";
             this.labelApellidos.Size = new System.Drawing.Size(262, 30);
             this.labelApellidos.TabIndex = 16;
@@ -347,66 +353,11 @@
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelNombre.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelNombre.Location = new System.Drawing.Point(208, 61);
+            this.labelNombre.Location = new System.Drawing.Point(54, 87);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(262, 30);
             this.labelNombre.TabIndex = 15;
             this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Location = new System.Drawing.Point(97, 147);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 30);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "DNI:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label6.Location = new System.Drawing.Point(97, 192);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 30);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Email:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Location = new System.Drawing.Point(97, 239);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 30);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Telefono:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label8.Location = new System.Drawing.Point(97, 105);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 30);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Apellidos:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Location = new System.Drawing.Point(97, 61);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 30);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Nombre:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage6
             // 
@@ -478,6 +429,96 @@
             this.dataGridVacunas.Size = new System.Drawing.Size(240, 302);
             this.dataGridVacunas.TabIndex = 0;
             // 
+            // labelFechaNa
+            // 
+            this.labelFechaNa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFechaNa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelFechaNa.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelFechaNa.Location = new System.Drawing.Point(491, 265);
+            this.labelFechaNa.Name = "labelFechaNa";
+            this.labelFechaNa.Size = new System.Drawing.Size(262, 30);
+            this.labelFechaNa.TabIndex = 24;
+            this.labelFechaNa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelNombre_Trabajador
+            // 
+            this.labelNombre_Trabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre_Trabajador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNombre_Trabajador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNombre_Trabajador.Location = new System.Drawing.Point(491, 218);
+            this.labelNombre_Trabajador.Name = "labelNombre_Trabajador";
+            this.labelNombre_Trabajador.Size = new System.Drawing.Size(262, 30);
+            this.labelNombre_Trabajador.TabIndex = 23;
+            this.labelNombre_Trabajador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelNombre_mascota
+            // 
+            this.labelNombre_mascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre_mascota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelNombre_mascota.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelNombre_mascota.Location = new System.Drawing.Point(491, 173);
+            this.labelNombre_mascota.Name = "labelNombre_mascota";
+            this.labelNombre_mascota.Size = new System.Drawing.Size(262, 30);
+            this.labelNombre_mascota.TabIndex = 22;
+            this.labelNombre_mascota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelChip_mascota
+            // 
+            this.labelChip_mascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChip_mascota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelChip_mascota.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelChip_mascota.Location = new System.Drawing.Point(491, 131);
+            this.labelChip_mascota.Name = "labelChip_mascota";
+            this.labelChip_mascota.Size = new System.Drawing.Size(262, 30);
+            this.labelChip_mascota.TabIndex = 21;
+            this.labelChip_mascota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelDNI_mascota
+            // 
+            this.labelDNI_mascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDNI_mascota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelDNI_mascota.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDNI_mascota.Location = new System.Drawing.Point(491, 87);
+            this.labelDNI_mascota.Name = "labelDNI_mascota";
+            this.labelDNI_mascota.Size = new System.Drawing.Size(262, 30);
+            this.labelDNI_mascota.TabIndex = 20;
+            this.labelDNI_mascota.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label10.Location = new System.Drawing.Point(54, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(262, 30);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Clientes:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label11.Location = new System.Drawing.Point(491, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(262, 30);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Mascotas:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRaza
+            // 
+            this.labelRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRaza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelRaza.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelRaza.Location = new System.Drawing.Point(491, 313);
+            this.labelRaza.Name = "labelRaza";
+            this.labelRaza.Size = new System.Drawing.Size(262, 30);
+            this.labelRaza.TabIndex = 27;
+            this.labelRaza.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Trabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,11 +575,6 @@
         private System.Windows.Forms.Label labelDNI;
         private System.Windows.Forms.Label labelApellidos;
         private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.DataGridView dataGridRevision;
         private System.Windows.Forms.DataGridView dataGridPelo;
@@ -546,5 +582,13 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelFechaNa;
+        private System.Windows.Forms.Label labelNombre_Trabajador;
+        private System.Windows.Forms.Label labelNombre_mascota;
+        private System.Windows.Forms.Label labelChip_mascota;
+        private System.Windows.Forms.Label labelDNI_mascota;
+        private System.Windows.Forms.Label labelRaza;
     }
 }

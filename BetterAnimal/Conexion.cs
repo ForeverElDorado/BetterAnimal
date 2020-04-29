@@ -276,6 +276,24 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        public DataTable getAllMascotas(string nombre)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM mascota WHERE chip_mascota like '" + nombre + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
         public DataTable getClientePorDNI(String dni)
         {
             try

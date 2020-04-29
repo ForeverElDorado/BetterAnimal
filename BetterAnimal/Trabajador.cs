@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient.Memcached;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,14 +15,12 @@ namespace BetterAnimal.Trabajador
     {
         Conexion conexion = new Conexion();
         DataTable mascotas = new DataTable();
+        ///
         DataTable clientes = new DataTable();
 
         DataTable clientePorDNI = new DataTable();
         DataTable mascotaPorChip = new DataTable();
-        DataTable chips = new DataTable();
-
-        string dni;
-        string chip;
+        
         public Trabajador()
         {
             InitializeComponent();
@@ -46,6 +45,7 @@ namespace BetterAnimal.Trabajador
             dataGridPelo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridPelo.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
+        //Buscadores
         private void buscarCliente(object sender, EventArgs e)
         {
            //lee lo que escribes en la TexBox y lo compara con la BBDD si coincide mostrara la info del cliente.
@@ -88,7 +88,7 @@ namespace BetterAnimal.Trabajador
 
             }
         }
-
+        //Registros
         private void registrarMascota(object sender, EventArgs e)
         {
             VentanaRegistarMascota ventana = new VentanaRegistarMascota();
@@ -109,29 +109,47 @@ namespace BetterAnimal.Trabajador
             ventana.Show();
             
         }
-
+        //PARA EL BUSCADOR DE PINCHAR
         private void dataGridMascotas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            chip = dataGridMascotas.Rows[e.RowIndex].Cells["chip_mascota"].Value.ToString();
-            MessageBox.Show(chip);
+            cogerInfoMascota(dataGridMascotas.Rows[e.RowIndex].Cells["chip_mascota"].Value.ToString());
+            MessageBox.Show("Mascota buscada, vaya a la hoja de resultados.");
         }
-
-        private void dataGridClientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridClientes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            dni = dataGridMascotas.Rows[e.RowIndex].Cells["dni_cliente"].Value.ToString();
-            MessageBox.Show(chip);
-            InfoClienteBuscado ventana = new InfoClienteBuscado();
-            ventana.Show();
+            cogerInfo(dataGridClientes.Rows[e.RowIndex].Cells["dni_cliente"].Value.ToString());
+            MessageBox.Show("Cliente buscado, vaya a la hoja de resultados.");
         }
+        
+        public void cogerInfo(String dni)
+        {
+            clientes = conexion.getAllClientes(dni);
+            labelNombre.Text = "Nombre: " + clientes.Rows[0]["nombre_cliente"].ToString();
+            labelApellidos.Text = "Primer Apellido: " + clientes.Rows[0]["apellido_cliente"].ToString();
+            labelTelefono.Text = "Telefono: " + clientes.Rows[0]["telefono"].ToString();
+            labelEmail.Text = "Email: " + clientes.Rows[0]["email"].ToString();
+            labelDNI.Text = "DNI: " + clientes.Rows[0]["dni_cliente"].ToString();
+        }
+        public void cogerInfoMascota(String chip)
+        {
+            mascotas = conexion.getAllMascotas(chip);
+            labelChip_mascota.Text = "Chip: " + mascotas.Rows[0]["chip_mascota"].ToString();
+            labelDNI_mascota.Text = "DNI Cliente: " + mascotas.Rows[0]["dni_cliente"].ToString();
+            labelNombre_Trabajador.Text = "Trabajador: " + mascotas.Rows[0]["nombre_trabajador"].ToString();
+            labelRaza.Text = "Raza: " + mascotas.Rows[0]["raza_mascota"].ToString();
+            labelFechaNa.Text = "Fecha NA: " + mascotas.Rows[0]["fecha_na_mascota"].ToString();
+            labelNombre_mascota.Text = "Nombre Animal: " + mascotas.Rows[0]["nombre_mascota"].ToString();
+        }
+
+
 
         private void tabControl1_Enter(object sender, EventArgs e)
         {
-            chips = conexion.getAllClientes(chip);
+           // chips = conexion.getAllClientes(chip);
            // labelNombre.Text = "Nombre" + chips.Rows[1]["nombre_cliente"].ToString();
 
         }
-
+        //REGISTRO DE CITAS...
         private void botonRegistrarVacuna(object sender, EventArgs e)
         {
             Citas.RegistarVacuna ventana = new Citas.RegistarVacuna();
@@ -150,5 +168,7 @@ namespace BetterAnimal.Trabajador
             Citas.RegistrarRevision ventana = new Citas.RegistrarRevision();
             ventana.Show();
         }
+
+        
     }
 }
