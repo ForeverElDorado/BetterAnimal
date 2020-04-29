@@ -182,6 +182,28 @@ namespace BetterAnimal
                 return "error";
             }
         }
+        public String insertaVacuna(String chip_mascota, String dia_emision, String dia_caducidad, String nombre_vacuna)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO trabajador (chip_mascota, dia_emision, dia_caducidad, nombre_vacuna) VALUES (@chip_mascota, @dia_emision, @dia_caducidad, @nombre_vacuna)", conexion);
+                consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
+                consulta.Parameters.AddWithValue("@dia_emision", dia_emision);
+                consulta.Parameters.AddWithValue("@dia_caducidad", dia_caducidad);
+                consulta.Parameters.AddWithValue("@nombre_vacuna", nombre_vacuna);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "Vacuna Registrada con EXITO";
+            }
+            catch (MySqlException e)
+            {
+                return "error fatal";
+            }
+        }
         public DataTable getMascotas()
         {
             try
