@@ -57,12 +57,8 @@ namespace BetterAnimal.Trabajador
             }
             else
             {
-                //InfoClienteBuscado.dni = int.Parse(mascotaPorChip.Rows[0]["dni_cliente"].ToString());
-                InfoClienteBuscado.DNIactual = int.Parse(clientePorDNI.Rows[0]["dni_cliente"].ToString());
-                InfoClienteBuscado ventana = new InfoClienteBuscado();
-                ventana.Show();
-                this.Hide();
-               
+                cogerInfo(dniCliente);
+                MessageBox.Show("Cliente buscado, vaya a la hoja de resultados.");
 
             }
 
@@ -78,14 +74,8 @@ namespace BetterAnimal.Trabajador
             }
             else
             {
-
-                // VentanaPrincipal.idActual = int.Parse(clienteporDNI.Rows[0]["dni_cliente"].ToString());
-                // this.mainForm.enseñaPokemon(VentanaPrincipal.idActual);
-                //InfoClienteBuscado.dni =  int.Parse(mascotaPorChip.Rows[0]["chip_mascota"].ToString());
-                VentanaCliente ventana = new VentanaCliente();
-                ventana.Show();
-                this.Hide();
-
+                cogerInfoMascota(chipMascota);
+                MessageBox.Show("Mascota buscada, vaya a la hoja de resultados.");
             }
         }
         //Registros

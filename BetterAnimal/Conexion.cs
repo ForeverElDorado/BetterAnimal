@@ -316,7 +316,7 @@ namespace BetterAnimal
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascotas where chip_mascota = '" + chip + "'", conexion);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascota where chip_mascota = '" + chip + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
