@@ -18,8 +18,8 @@ namespace BetterAnimal
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Trabajador.Trabajador());
             //Application.Run(new VentanaLogin());
-            Application.Run(new VentanaCliente());
-            //Application.Run(new VentanaInicio());
+            //Application.Run(new VentanaCliente());
+            Application.Run(new VentanaInicio());
         }
     }
 }

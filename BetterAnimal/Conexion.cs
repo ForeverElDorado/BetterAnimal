@@ -23,15 +23,14 @@ namespace BetterAnimal
             conexion = new MySqlConnection("Server = 127.0.0.1; Database = veterinario; Uid = root; Pwd =; Port = 3306");
         }
 
-        public Boolean loginVeterinario(String usuario, String contraseña, String dni)
+        public Boolean loginVeterinario(String usuario, String contraseña)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =     
-                new MySqlCommand("SELECT * FROM cliente where usuario = @usuario or dni_cliente = @dni_cliente", conexion);
+                new MySqlCommand("SELECT * FROM cliente where usuario = @usuario", conexion);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
-                consulta.Parameters.AddWithValue("@dni_cliente", dni);
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
 
@@ -43,7 +42,7 @@ namespace BetterAnimal
                     if(BCrypt.Net.BCrypt.Verify(contraseña, passwordConHash))
                     {
                         return true;
-                        dni = usuarioActual;
+                        usuario = usuarioActual;
                     }
                     return false;
                 }
@@ -411,7 +410,7 @@ namespace BetterAnimal
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT * FROM mascota WHERE dni_cliente like '" + usuarioActual + "'", conexion);
+                    new MySqlCommand("SELECT * FROM mascota WHERE usuario like '" + usuarioActual + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
