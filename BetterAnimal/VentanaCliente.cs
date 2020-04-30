@@ -16,6 +16,8 @@ namespace BetterAnimal
         DataTable misMascotas = new DataTable();
         DataTable tienda = new DataTable();
 
+        DataTable cliente = new DataTable();
+
         public VentanaCliente()
         {
             InitializeComponent();
@@ -25,6 +27,14 @@ namespace BetterAnimal
             dataGridTienda.DataSource = conexion.getTienda();
             dataGridTienda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridTienda.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            conexion.getMisDatos();
+
+            cliente = conexion.getMisDatos();
+            labelNombre.Text = "Nombre: " + cliente.Rows[0]["nombre_cliente"].ToString();
+            labelApellidos.Text = "Primer Apellido: " + cliente.Rows[0]["apellido_cliente"].ToString();
+            labelTelefono.Text = "Telefono: " + cliente.Rows[0]["telefono"].ToString();
+            labelEmail.Text = "Email: " + cliente.Rows[0]["email"].ToString();
+            labelDNI.Text = "DNI: " + cliente.Rows[0]["dni_cliente"].ToString();
 
         }
 

@@ -422,5 +422,23 @@ namespace BetterAnimal
                 throw e;
             }
         }
+        public DataTable getMisDatos()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM cliente WHERE usuario like '" + usuarioActual + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable cliente = new DataTable();
+                cliente.Load(resultado);
+                conexion.Close();
+                return cliente;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }
