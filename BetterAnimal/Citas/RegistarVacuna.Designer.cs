@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateEmision = new System.Windows.Forms.DateTimePicker();
-            this.datecaducidad = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.datecaducidad = new System.Windows.Forms.DateTimePicker();
+            this.dateEmision = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // textBoxChip
@@ -94,20 +94,6 @@
             this.label3.Text = "Día Caducidad:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dateEmision
-            // 
-            this.dateEmision.Location = new System.Drawing.Point(22, 226);
-            this.dateEmision.Name = "dateEmision";
-            this.dateEmision.Size = new System.Drawing.Size(252, 20);
-            this.dateEmision.TabIndex = 14;
-            // 
-            // datecaducidad
-            // 
-            this.datecaducidad.Location = new System.Drawing.Point(514, 226);
-            this.datecaducidad.Name = "datecaducidad";
-            this.datecaducidad.Size = new System.Drawing.Size(252, 20);
-            this.datecaducidad.TabIndex = 15;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,6 +104,20 @@
             this.button1.Text = "Registrar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // datecaducidad
+            // 
+            this.datecaducidad.Location = new System.Drawing.Point(514, 226);
+            this.datecaducidad.Name = "datecaducidad";
+            this.datecaducidad.Size = new System.Drawing.Size(252, 20);
+            this.datecaducidad.TabIndex = 15;
+            // 
+            // dateEmision
+            // 
+            this.dateEmision.Location = new System.Drawing.Point(22, 226);
+            this.dateEmision.Name = "dateEmision";
+            this.dateEmision.Size = new System.Drawing.Size(252, 20);
+            this.dateEmision.TabIndex = 14;
             // 
             // RegistarVacuna
             // 
@@ -152,8 +152,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateEmision;
-        private System.Windows.Forms.DateTimePicker datecaducidad;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker datecaducidad;
+        private System.Windows.Forms.DateTimePicker dateEmision;
     }
 }

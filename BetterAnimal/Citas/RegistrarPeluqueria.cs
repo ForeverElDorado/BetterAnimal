@@ -12,9 +12,15 @@ namespace BetterAnimal.Citas
 {
     public partial class RegistrarPeluqueria : Form
     {
+        Conexion conexion = new Conexion();
         public RegistrarPeluqueria()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(conexion.insertaPeluqueria(textBoxChip.Text, dateTimePicker1.Value,textBoxTratamiento.Text));
         }
     }
 }

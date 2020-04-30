@@ -182,13 +182,13 @@ namespace BetterAnimal
                 return "error";
             }
         }
-        public String insertaVacuna(String chip_mascota, String dia_emision, String dia_caducidad, String nombre_vacuna)
+        public String insertaVacuna(String chip_mascota, DateTime dia_emision, DateTime dia_caducidad, String nombre_vacuna)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO trabajador (chip_mascota, dia_emision, dia_caducidad, nombre_vacuna) VALUES (@chip_mascota, @dia_emision, @dia_caducidad, @nombre_vacuna)", conexion);
+                    new MySqlCommand("INSERT INTO vacunas (chip_mascota, dia_emision, dia_caducidad, nombre_vacuna) VALUES (@chip_mascota, @dia_emision, @dia_caducidad, @nombre_vacuna)", conexion);
                 consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
                 consulta.Parameters.AddWithValue("@dia_emision", dia_emision);
                 consulta.Parameters.AddWithValue("@dia_caducidad", dia_caducidad);
@@ -197,7 +197,49 @@ namespace BetterAnimal
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
-                return "Vacuna Registrada con EXITO";
+                return "Vacuna Registrada con EXITO, reinicia la App para ver la cita nueva.";
+            }
+            catch (MySqlException e)
+            {
+                return "error fatal";
+            }
+        }
+        public String insertaPeluqueria(String chip_mascota, DateTime dia_peluqueria, String tratamiento)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO peluqueria (chip_mascota, dia_peluqueria, tratamiento) VALUES (@chip_mascota, @dia_peluqueria, @tratamiento)", conexion);
+                consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
+                consulta.Parameters.AddWithValue("@dia_peluqueria", dia_peluqueria);
+                consulta.Parameters.AddWithValue("@tratamiento", tratamiento);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "Cita Registrada con EXITO, reinicia la App para ver la cita nueva.";
+            }
+            catch (MySqlException e)
+            {
+                return "error fatal";
+            }
+        }
+        public String insertaRevision(String chip_mascota, DateTime dia_revision, String motivo_revision)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO revisiones (chip_mascota, dia_revision, motivo_revision) VALUES (@chip_mascota, @dia_revision, @motivo_revision)", conexion);
+                consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
+                consulta.Parameters.AddWithValue("@dia_revision", dia_revision);
+                consulta.Parameters.AddWithValue("@motivo_revision", motivo_revision);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "Revisión Registrada con EXITO, reinicia la App para ver la revisión nueva.";
             }
             catch (MySqlException e)
             {

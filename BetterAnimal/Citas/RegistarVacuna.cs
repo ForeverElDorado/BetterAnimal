@@ -20,7 +20,8 @@ namespace BetterAnimal.Citas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(conexion.insertaVacuna(textBoxChip.Text, dateEmision.Value.ToString(), datecaducidad.Value.ToString(), textNombreVacuna.Text)); ;
+            MessageBox.Show(conexion.insertaVacuna(textBoxChip.Text, dateEmision.Value, datecaducidad.Value, textNombreVacuna.Text));
+            
         }
     }
 }

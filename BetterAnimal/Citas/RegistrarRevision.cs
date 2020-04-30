@@ -12,9 +12,15 @@ namespace BetterAnimal.Citas
 {
     public partial class RegistrarRevision : Form
     {
+        Conexion conexion = new Conexion();
         public RegistrarRevision()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(conexion.insertaRevision(textBoxChip.Text, dateTimePicker1.Value, textBoxMotivo.Text));
         }
     }
 }
