@@ -9,8 +9,24 @@ using MySql.Data.MySqlClient.Authentication;
 
 namespace BetterAnimal
 {
-    //WRITTEN AND DIRECTED BY ALVARO GARCIA HERRERO
-    
+    //WRITTEN AND DIRECTED BY ALVARO GARCIA HERRERO AND GUILLERMO BUSTILLOS AND RUBEN JUAREZ ELIAS
+    /* Veterinario llamado "Better Animal"
+     * Es funcional en todos los sentidos salvo por la tabla de Mis Mascotas donde deberian salir las mascotas del usuario logeado
+     * el codigo funciona pero no entiendo porque no sale lo que muestra.
+     * La tienda muestra un catalogo con productos disponibles.
+     * Dependiendo de quien haga el Login se abrira la app orientada para un Cliente o un Trabajador.
+     * Puedes registrar una gran cantidad de datos directamente en la BBDD.
+     * Existen dos tipos de buscadores en "Trabajador". El primero es escribiendo un dato y en la pestaña de "Resultados" muestra el resultado de
+     * la busqueda. La segunda es pulsando directamente en la tabla general y despues acudir a "Resultados".
+     */
+    //BBDD by Ruben Juarez Elias helped by Alvaro and Guillermo
+    /*Citas by RUBEN
+     * Ventanas de Registro by RUBEN Y GUILE
+     * VentanaCliente by ALVARO
+     * Trabajador by ALVARO
+     * VentanaLogin by GUILLERMO
+     */
+
     class Conexion
     {
         public string clienteActual;
@@ -22,7 +38,7 @@ namespace BetterAnimal
         {
             conexion = new MySqlConnection("Server = 127.0.0.1; Database = veterinario; Uid = root; Pwd =; Port = 3306");
         }
-
+        //ALVARO
         public Boolean loginVeterinario(String usuario, String contraseña)
         {
             try
@@ -56,6 +72,7 @@ namespace BetterAnimal
                 return false;
             }
         }
+        //ALVARO
         public Boolean loginTrabajador(String usuario, String contraseña)
         {
             try
@@ -86,6 +103,7 @@ namespace BetterAnimal
             }
         }
         //CODIGO PARA INSERTAR USUARIOS EN LA BASE DE DATOS, HAY QUE AÑADIR STRING POR CAMPO (NOMBRE APELLIDOS TELEFONO EMAIL...)
+        //GUILLERMO
         public String insertaCliente(String dni_cliente, String nombre_cliente, String apellido_cliente, String telefono, String chip_mascota, String email, String usuario, String contraseña)
         {
             try
@@ -105,31 +123,32 @@ namespace BetterAnimal
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
-                return "ok";
+                return "Registro completado de forma correcta.";
             }
             catch (MySqlException e)
             {
                 return "error";
             }
         }
-        public String insertaMascota(String nombre_mascota, String chip_mascota, String nombre_trabajador, String raza_mascota, String fecha_na_mascota, String dni_cliente)
+        public String insertaMascota(String nombre_mascota, String chip_mascota, String nombre_trabajador, String raza_mascota, String fecha_na_mascota, String usuario)
         {
+            //GUILLERMO
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("INSERT INTO mascota (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota, dni_cliente) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota, @dni_cliente)", conexion);
+                    new MySqlCommand("INSERT INTO mascota (nombre_mascota, chip_mascota, nombre_trabajador, raza_mascota, fecha_na_mascota, usuario) VALUES (@nombre_mascota, @chip_mascota, @nombre_trabajador, @raza_mascota, @fecha_na_mascota, @usuario)", conexion);
                 consulta.Parameters.AddWithValue("@nombre_mascota", nombre_mascota);
                 consulta.Parameters.AddWithValue("@chip_mascota", chip_mascota);
                 consulta.Parameters.AddWithValue("@nombre_trabajador", nombre_trabajador);
                 consulta.Parameters.AddWithValue("@raza_mascota", raza_mascota);
                 consulta.Parameters.AddWithValue("@fecha_na_mascota", fecha_na_mascota);
-                consulta.Parameters.AddWithValue("@dni_cliente", dni_cliente);
+                consulta.Parameters.AddWithValue("@usuario", usuario);
 
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
-                return "ok";
+                return "Animal registrado de forma correcta";
             }
             catch (MySqlException e)
             {
@@ -138,6 +157,7 @@ namespace BetterAnimal
         }
         public String insertaTrabajador(String dni_trabajador, String nombre_trabajador, String apellido_trabajador, String telefono, String email, String usuario, String contraseña)
         {
+            //GUILLERMO
             try
             {
                 conexion.Open();
@@ -154,7 +174,7 @@ namespace BetterAnimal
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
-                return "ok";
+                return "Trabajador insertado de forma correcta.";
             }
             catch (MySqlException e)
             {
@@ -163,6 +183,7 @@ namespace BetterAnimal
         }
         public String insertaVacuna(String chip_mascota, DateTime dia_emision, DateTime dia_caducidad, String nombre_vacuna)
         {
+            //RUBEN
             try
             {
                 conexion.Open();
@@ -185,6 +206,7 @@ namespace BetterAnimal
         }
         public String insertaPeluqueria(String chip_mascota, DateTime dia_peluqueria, String tratamiento)
         {
+            //RUBEN
             try
             {
                 conexion.Open();
@@ -206,6 +228,7 @@ namespace BetterAnimal
         }
         public String insertaRevision(String chip_mascota, DateTime dia_revision, String motivo_revision)
         {
+            //RUBEN
             try
             {
                 conexion.Open();
@@ -227,6 +250,7 @@ namespace BetterAnimal
         }
         public DataTable getMascotas()
         {
+            //ALVARO
             try
             {
                 conexion.Open();
@@ -245,6 +269,7 @@ namespace BetterAnimal
         }
         public DataTable getClientes()
         {
+            //ALVARO
             try
             {
                 conexion.Open();
@@ -263,6 +288,7 @@ namespace BetterAnimal
         }
         public DataTable getAllClientes(string nombre)
         {
+            //ALVARO
             try
             {
                 conexion.Open();
@@ -281,6 +307,7 @@ namespace BetterAnimal
         }
         public DataTable getAllMascotas(string nombre)
         {
+            //ALVARO
             try
             {
                 conexion.Open();
@@ -299,6 +326,7 @@ namespace BetterAnimal
         }
         public DataTable getClientePorDNI(String dni)
         {
+            //ALVARO
             try
             {
                 conexion.Open();
@@ -316,6 +344,7 @@ namespace BetterAnimal
         }
         public DataTable getAnimalPorChip(String chip)
         {
+            //ALVARO
             try
             {
                 conexion.Open();
@@ -333,6 +362,7 @@ namespace BetterAnimal
         }
         public DataTable getTienda()
         {
+            //GUILLERMO
             try
             {
                 conexion.Open();
@@ -351,6 +381,7 @@ namespace BetterAnimal
         }
         public DataTable getVacunas()
         {
+            //RUBEN
             try
             {
                 conexion.Open();
@@ -369,6 +400,7 @@ namespace BetterAnimal
         }
         public DataTable getPeluqueria()
         {
+            //RUBEN
             try
             {
                 conexion.Open();
@@ -387,6 +419,7 @@ namespace BetterAnimal
         }
         public DataTable getRevision()
         {
+            //RUBEN
             try
             {
                 conexion.Open();
@@ -406,16 +439,17 @@ namespace BetterAnimal
         //Para que muestre los animales del usuario actual
         public DataTable getMisMascotas()
         {
+            //ALVARO
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT * FROM mascota WHERE usuario like '" + usuarioActual + "'", conexion);
+                    new MySqlCommand("SELECT * FROM mascota where usuario = '" + usuarioActual + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
-                DataTable mascotas = new DataTable();
-                mascotas.Load(resultado);
+                DataTable mascota = new DataTable();
+                mascota.Load(resultado);
                 conexion.Close();
-                return mascotas;
+                return mascota;
             }
             catch (MySqlException e)
             {
@@ -424,6 +458,7 @@ namespace BetterAnimal
         }
         public DataTable getMisDatos()
         {
+            //ALVARO
             try
             {
                 conexion.Open();

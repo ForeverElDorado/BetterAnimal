@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trabajador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.dataGridMascotas = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.dataGridClientes = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,8 +70,6 @@
             this.dataGridRevision = new System.Windows.Forms.DataGridView();
             this.dataGridPelo = new System.Windows.Forms.DataGridView();
             this.dataGridVacunas = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMascotas)).BeginInit();
@@ -119,6 +119,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mascotas";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(105, 365);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(617, 24);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Haz click en el Chip de la Mascota para obtener su informacion.";
+            // 
             // dataGridMascotas
             // 
             this.dataGridMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,6 +149,16 @@
             this.tabPage2.Size = new System.Drawing.Size(793, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Clientes";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(84, 362);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(587, 24);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Haz click en el DNI del Cliente para obtener su informacion.";
             // 
             // dataGridClientes
             // 
@@ -523,26 +543,6 @@
             this.dataGridVacunas.Name = "dataGridVacunas";
             this.dataGridVacunas.Size = new System.Drawing.Size(240, 302);
             this.dataGridVacunas.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(105, 365);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(617, 24);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Haz click en el Chip de la Mascota para obtener su informacion.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(84, 362);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(587, 24);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Haz click en el DNI del Cliente para obtener su informacion.";
             // 
             // Trabajador
             // 
