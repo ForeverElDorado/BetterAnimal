@@ -21,9 +21,10 @@ namespace BetterAnimal
         public VentanaCliente()
         {
             InitializeComponent();
-            tablaMascotas.DataSource = conexion.getMisMascotas();
-            tablaMascotas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            tablaMascotas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //LA TABLA NO FUNCIONA BIEN MEJOR COMENTARLA Y EVITAR ERRORES AL AÑADIR NUEVAS MASCOTAS
+            //tablaMascotas.DataSource = conexion.getMisMascotas();
+            //tablaMascotas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            //tablaMascotas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridTienda.DataSource = conexion.getTienda();
             dataGridTienda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridTienda.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
